@@ -14,7 +14,7 @@ interface IPersonCloneable
     Person Clone();
 }
 
-
+// Yada ICloneable interfaceini vrebilirzi 
 class Person:IPersonCloneable
 {
     public Person(string name, string surname, Department department, int salary, int premium)
