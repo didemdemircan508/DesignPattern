@@ -7,15 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryDesignPattern", "Des
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryAndSingleton", "FactoryAndSingleton\FactoryAndSingleton.csproj", "{6D711657-2CFD-4F33-8127-243764ADB97F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryDesignPattern", "AbstractFactoryDesignPattern\AbstractFactoryDesignPattern.csproj", "{972E6E9C-9185-40F6-851A-6B01BFA50334}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactoryDesignPattern", "AbstractFactoryDesignPattern\AbstractFactoryDesignPattern.csproj", "{972E6E9C-9185-40F6-851A-6B01BFA50334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{3026CF6D-BC3E-4CE2-87BA-234BD64CB0BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{3026CF6D-BC3E-4CE2-87BA-234BD64CB0BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultitonDesginPattern", "MultitonDesginPattern\MultitonDesginPattern.csproj", "{CB15C3D2-6354-4E59-95D2-2C784F82F5FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultitonDesginPattern", "MultitonDesginPattern\MultitonDesginPattern.csproj", "{CB15C3D2-6354-4E59-95D2-2C784F82F5FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeDesignPattern", "PrototypeDesignPattern\PrototypeDesignPattern.csproj", "{CC087258-0DC8-437B-B2F5-F042652FE3E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeDesignPattern", "PrototypeDesignPattern\PrototypeDesignPattern.csproj", "{CC087258-0DC8-437B-B2F5-F042652FE3E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectPoolDedisnPattern", "ObjectPoolDedisnPattern\ObjectPoolDedisnPattern.csproj", "{3CE4704B-7515-4CE1-B9F7-AEF33F09523A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectPoolDedisnPattern", "ObjectPoolDedisnPattern\ObjectPoolDedisnPattern.csproj", "{3CE4704B-7515-4CE1-B9F7-AEF33F09523A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderDesignPattern", "BuilderDesignPattern\BuilderDesignPattern.csproj", "{80938C7B-280A-48E0-8851-7D4E667D9E2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{3CE4704B-7515-4CE1-B9F7-AEF33F09523A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CE4704B-7515-4CE1-B9F7-AEF33F09523A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CE4704B-7515-4CE1-B9F7-AEF33F09523A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80938C7B-280A-48E0-8851-7D4E667D9E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80938C7B-280A-48E0-8851-7D4E667D9E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80938C7B-280A-48E0-8851-7D4E667D9E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80938C7B-280A-48E0-8851-7D4E667D9E2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
