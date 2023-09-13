@@ -9,7 +9,7 @@ Console.WriteLine("Hello, World!");
 
 
 
- 
+
 
 //FACTORY DESIGN PATTERN 
 
@@ -29,7 +29,7 @@ Console.WriteLine("Hello, World!");
 //        Console.WriteLine($"{nameof(A)} nesnesi üretildi");
 //    }
 //    public void Run()
- 
+
 //    {
 //        throw new NotImplementedException();
 //    }
@@ -149,150 +149,150 @@ Console.WriteLine("Hello, World!");
 
 
 
-//BankCreator bankCreator = new();
+BankCreator bankCreator = new();
 
-//GarantiBank? garantiBank=bankCreator.Create(BankType.Garanti) as GarantiBank;
+GarantiBank? garantiBank = bankCreator.Create(BankType.Garanti) as GarantiBank;
 
-//HalkBank? halkBank= bankCreator.Create(BankType.Halkbank) as HalkBank;
-
-
-
-//interface IBank
-//{ 
-
-//}
-//class GarantiBank:IBank
-//{ 
-//    string _userCode, _password;
-//    public GarantiBank(string userCode,string password)
-//    {
-//        _userCode = userCode;
-//        _password = password;
-//    }
-
-//    public void ConnectGaranti()
-//        => Console.WriteLine($"{nameof(GarantiBank)}-Connected");
-
-//    public void SendMoney(int amount)
-//        => Console.WriteLine($"{amount}-mpney send");
-
-//}
-
-//class HalkBank:IBank
-//{
-//    string _userCode, _password;
-//    public HalkBank(string userCode)
-//    {
-//        _userCode = userCode;
-        
-
-//    }
-
-//    public string Password { set => _password = value; }
-
-//    public void Send(int amount,string accountNumber)
-//        => Console.WriteLine($"{amount}-mpney send");
-//}
-
-//class CredentialVakifBank
-//{ 
-//    public string UserCode { get; set; }
-//    public string Mail { get; set; }
-
-
-//}
-
-//class VakifBank:IBank
-//{
-
-//    string _userCode, _password,_email ;
-//    public bool isAuth { get; set; }
-//    public VakifBank(CredentialVakifBank credential,string password)
-//    {
-//        _userCode = credential.UserCode;
-//        _email = credential.Mail;
-//        _password= password;
+HalkBank? halkBank = bankCreator.Create(BankType.Halkbank) as HalkBank;
 
 
 
-//    }
+interface IBank
+{
 
-//    public void  ValidateCredential()
-//    { 
-//        if(true)
-//            isAuth=true;
+}
+class GarantiBank : IBank
+{
+    string _userCode, _password;
+    public GarantiBank(string userCode, string password)
+    {
+        _userCode = userCode;
+        _password = password;
+    }
 
+    public void ConnectGaranti()
+        => Console.WriteLine($"{nameof(GarantiBank)}-Connected");
 
-//    }
+    public void SendMoney(int amount)
+        => Console.WriteLine($"{amount}-mpney send");
 
-  
+}
 
-//    public void SendMoneyToAccountNumber(int amount, string receiptName,string accountNumber)
-//        => Console.WriteLine($"{amount}-mpney send");
-
-//}
-
-
-//interface IBankFactory
-//{
-//    IBank CreateInstance();
-
-//}
-
-//class GarantiFactory : IBankFactory
-//{
-//    public IBank CreateInstance()
-//    {
-//        GarantiBank garanti = new("asd", "123");
-//        garanti.ConnectGaranti();
-//        return garanti;
-//    }
-//}
-
-//class HalkBankFactory : IBankFactory
-//{
-//    public IBank CreateInstance()
-//    {
-//        HalkBank halkBank = new("asd");
-//        halkBank.Password = "123";
-//        return halkBank;
-//    }
-//}
+class HalkBank : IBank
+{
+    string _userCode, _password;
+    public HalkBank(string userCode)
+    {
+        _userCode = userCode;
 
 
-//class VakifBankFactory : IBankFactory
-//{
-//    public IBank CreateInstance()
-//    {
-//        VakifBank vakifBank = new(new() { Mail = "dd@gmail.com", UserCode = "dd" }, "123");
-//        vakifBank.ValidateCredential();
-//        return vakifBank;
-//    }
-//}
+    }
 
-//enum BankType
-//{ 
-//    Garanti,Halkbank,VakifBank
+    public string Password { set => _password = value; }
 
-//}
+    public void Send(int amount, string accountNumber)
+        => Console.WriteLine($"{amount}-mpney send");
+}
 
-//class BankCreator
-//{
+class CredentialVakifBank
+{
+    public string UserCode { get; set; }
+    public string Mail { get; set; }
 
-//    public IBank Create(BankType bankType)
-//    {
-//        IBankFactory _bankFactory = bankType switch
-//        {
-//            BankType.VakifBank => new VakifBankFactory(),
-//            BankType.Halkbank=> new HalkBankFactory(),
-//            BankType.Garanti=> new GarantiFactory()
 
-//        };
-//        return _bankFactory.CreateInstance();
-    
-//    }
+}
 
-//}
+class VakifBank : IBank
+{
 
-//factory methıd ve singleton birleşimi  
+    string _userCode, _password, _email;
+    public bool isAuth { get; set; }
+    public VakifBank(CredentialVakifBank credential, string password)
+    {
+        _userCode = credential.UserCode;
+        _email = credential.Mail;
+        _password = password;
+
+
+
+    }
+
+    public void ValidateCredential()
+    {
+        if (true)
+            isAuth = true;
+
+
+    }
+
+
+
+    public void SendMoneyToAccountNumber(int amount, string receiptName, string accountNumber)
+        => Console.WriteLine($"{amount}-mpney send");
+
+}
+
+
+interface IBankFactory
+{
+    IBank CreateInstance();
+
+}
+
+class GarantiFactory : IBankFactory
+{
+    public IBank CreateInstance()
+    {
+        GarantiBank garanti = new("asd", "123");
+        garanti.ConnectGaranti();
+        return garanti;
+    }
+}
+
+class HalkBankFactory : IBankFactory
+{
+    public IBank CreateInstance()
+    {
+        HalkBank halkBank = new("asd");
+        halkBank.Password = "123";
+        return halkBank;
+    }
+}
+
+
+class VakifBankFactory : IBankFactory
+{
+    public IBank CreateInstance()
+    {
+        VakifBank vakifBank = new(new() { Mail = "dd@gmail.com", UserCode = "dd" }, "123");
+        vakifBank.ValidateCredential();
+        return vakifBank;
+    }
+}
+
+enum BankType
+{
+    Garanti, Halkbank, VakifBank
+
+}
+
+class BankCreator
+{
+
+
+    public IBank Create(BankType bankType)
+    {
+        IBankFactory _bankFactory = bankType switch
+        {
+            BankType.VakifBank => new VakifBankFactory(),
+            BankType.Halkbank => new HalkBankFactory(),
+            BankType.Garanti => new GarantiFactory()
+
+        };
+        return _bankFactory.CreateInstance();
+
+    }
+
+}
+
 
